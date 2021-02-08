@@ -276,7 +276,9 @@ a.link.current::after {
   text-transform: uppercase;
 }
 
-.hero-button {
+
+
+.button {
   min-width: 200px;
   border: 0;
   border-radius: 4px;
@@ -529,7 +531,8 @@ a.client-link:focus {
 }
 
 .footer .site-nav-logo,
-.action-text {
+.action-text,
+.footer-form-label {
   margin-bottom: 20px;
 }
 
@@ -549,11 +552,14 @@ a.client-link:focus {
 
 .footer-social {
   width: 206px;
+  margin-right: 93px;
 }
 
-.action-text {
+.action-text,
+.footer-form-label{
   font-size: var(--normal-font-size);
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 ul.social-list {
@@ -593,6 +599,35 @@ a.social-link:focus {
 .our-team a.social-link:focus {
   color: var(--whitecolor);
 }
+
+.subscribe-form{
+  /* outline: 1px solid green; */
+  width: 570px;
+}
+
+.subscribe-email{
+  width:295px;
+  padding-left: 16px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-right: 12px;
+  font-size: 16px;
+  line-height: 0.8;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+
+  color: rgb(255, 255, 255, 0.6);
+  background-color: var(--second-bg-color);
+}
+
+.subscribe-button {
+  padding-left: 29px;
+  padding-right: 28px;
+}
+
 
 /* portfolio styles */
 .portfolio button:hover,
