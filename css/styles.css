@@ -331,8 +331,15 @@ a.link.current::after {
   width: 528px;
   height: 581px;
 
+  padding: 40px;
   background-color: var(--modal-bg-color);
-}
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+  0px 1px 1px rgba(0, 0, 0, 0.14),
+  0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+ }
 
 /* close-button */
 .modal-button {
@@ -349,6 +356,80 @@ a.link.current::after {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
 }
+
+
+.modal-title{
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color:var(--primary-text-color) ;
+  margin-bottom: 12px;
+}
+
+.form-field{
+  display: flex;
+   flex-direction: column;
+}
+
+.form-input{
+
+  width: 448px;
+  height: 40px;
+  padding-left: 12px;
+  padding-bottom: 11px;
+  padding-top: 11px;
+  margin-bottom: 10px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.form-label{
+  margin-bottom: 4px;
+  font-size:12px;
+  line-height:1.72 ;
+}
+
+input[type="comment"]{
+  /* height: 120px; */
+  padding-left: 16px;
+  padding-top: 12px;
+  margin-bottom: 0;
+}
+
+
+
+textarea{
+  resize: none;
+  
+}
+
+.modal-wrapper{
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+}
+
+.agreement{
+  display: flex;
+    margin-bottom: 30px;
+}
+
+.agreement a{
+  color: var(--accent-color);
+}
+
+.send-button{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+
 
 /* advantages */
 .advantages {
