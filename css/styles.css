@@ -605,8 +605,13 @@ a.social-link:focus {
   width: 570px;
 }
 
+.footer-form{
+  display: flex;
+  position: relative;
+}
+
 .subscribe-email{
-  width:295px;
+  width: 358px;
   padding-left: 16px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -624,8 +629,17 @@ a.social-link:focus {
 }
 
 .subscribe-button {
+  display: flex;
+  align-items: center;
+
   padding-left: 29px;
   padding-right: 28px;
+}
+
+.subscribe-form .icon{
+  fill: currentColor;
+  position: absolute;
+  right: 28px;
 }
 
 
