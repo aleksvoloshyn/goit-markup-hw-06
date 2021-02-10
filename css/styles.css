@@ -14,14 +14,21 @@
   --what-we-do-gredient: rgba(47, 48, 58, 0.8);
   --filter-btn-bg-color: #f5f4fa;
   --icons-bg: rgba(255, 255, 255, 0.1);
+  --ourteam-box-shadow: rgba(0, 0, 0, 0.12),
+  0px 1px 1px rgba(0, 0, 0, 0.14),
+  0px 2px 1px rgba(0, 0, 0, 0.2);
 
   --backdrop-modal-window: rgba(0, 0, 0, 0.2);
   --modal-bg-color: #ffffff;
   --modal-input-bordercolor: rgba(33, 33, 33, 0.2);
+  --placeholder-text-color: rgba(117, 117, 117, 0.5);
+  --input-text-color: rgba(33, 33, 33, 0.2);
 
   --border-color-portfolio: #eeeeee;
   --porfolio-card-hover: rgba(33, 150, 243, 0.9);
   --normal-font-size: 14px;
+  --email-subscribe-shadow:rgba(0, 0, 0, 0.15);
+  --email-subscribe-border-color: rgba(255, 255, 255, 0.3);
 
   --logo-color: #afb1b8;
 
@@ -33,7 +40,7 @@
   --portfolio-card-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
     0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 
-    --modal-boxshawow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+  --modal-boxshawow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 
@@ -219,7 +226,7 @@ a.link.current::after {
 }
 
 /* всем у кого сверху по-соседству класс item */
-.contacts .item + .item {
+.contacts .item+.item {
   margin-left: 50px;
 }
 
@@ -250,11 +257,9 @@ a.link.current::after {
   margin-right: auto;
 
   background-color: var(--second-bg-color);
-  background-image: linear-gradient(
-      to right,
+  background-image: linear-gradient(to right,
       var(--hero-gredient),
-      var(--hero-gredient)
-    ),
+      var(--hero-gredient)),
     url(../images/studio/ourteam.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -358,7 +363,7 @@ a.link.current::after {
   background-color: inherit;
 }
 
-.modal-button:hover{
+.modal-button:hover {
   fill: var(--accent-color);
 }
 
@@ -380,7 +385,7 @@ form.inputs {
   width: 448px;
   height: 342px;
   /* outline: 1px solid aquamarine; */
-  margin-bottom: 20px;
+
 }
 
 .form-field {
@@ -398,7 +403,7 @@ form.inputs {
   padding-top: 11px;
   margin-bottom: 10px;
 
-  border: 1px solid rgba(33, 33, 33, 0.2);
+  border: 1px solid var(--modal-input-bordercolor);
   border-radius: 4px;
 
   transition: outline-color var(--transition-cubic-primary);
@@ -408,7 +413,7 @@ form.inputs {
   padding-left: 12px;
 }
 
-.form-input:focus + .input-icon {
+.form-input:focus+.input-icon {
   fill: var(--accent-color);
 }
 
@@ -416,6 +421,11 @@ form.inputs {
 .form-text:focus {
   outline-color: var(--accent-color);
 }
+
+.form-field-textarea {
+  margin-bottom: 20px;
+}
+
 
 .input-icon {
   position: absolute;
@@ -440,7 +450,7 @@ form.inputs {
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
+  color:var(--placeholder-text-color);
 }
 
 .wrapp-form {
@@ -450,6 +460,7 @@ form.inputs {
 .agreement {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
   letter-spacing: 0.03em;
 }
@@ -458,9 +469,30 @@ form.inputs {
   color: var(--accent-color);
 }
 
-.send-button {
-  margin-left: 0;
-  margin-right: 0;
+/* обнуление стилей браузера для чекбокса */
+.checkbox {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.agreement::before{
+  content: "";
+  width: 16px;
+  height: 15px;
+  background-image: url(./../images/modal/icon-check.svg);
+  margin-right: 7px;
+  background-size: contain;
+  background-origin: border-box;
+}
+
+.checkbox:checked +.agreement::before {
+  background-image: url(./../images/modal/icon-checked.svg);
 }
 
 /* advantages */
@@ -484,7 +516,7 @@ form.inputs {
   margin-bottom: 10px;
 }
 
-.advantages .item + .item {
+.advantages .item+.item {
   margin-left: 30px;
 }
 
@@ -731,12 +763,12 @@ a.social-link:focus {
   font-size: 16px;
   line-height: 0.8;
 
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--email-subscribe-border-color);
   box-sizing: border-box;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0px 4px 4px var(--email-subscribe-shadow));
   border-radius: 4px;
 
-  color: rgb(255, 255, 255, 0.6);
+  color: var(--address-color);
   background-color: var(--second-bg-color);
 }
 
