@@ -17,6 +17,7 @@
 
   --backdrop-modal-window: rgba(0, 0, 0, 0.2);
   --modal-bg-color: #ffffff;
+  --modal-input-bordercolor: rgba(33, 33, 33, 0.2);
 
   --border-color-portfolio: #eeeeee;
   --porfolio-card-hover: rgba(33, 150, 243, 0.9);
@@ -31,6 +32,10 @@
 
   --portfolio-card-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
     0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+
+    --modal-boxshawow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 
   --transition-cubic-primary: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -331,8 +336,7 @@ a.link.current::after {
   padding: 40px;
   background-color: var(--modal-bg-color);
 
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--modal-boxshawow);
   border-radius: 4px;
 }
 
@@ -348,9 +352,16 @@ a.link.current::after {
   justify-content: center;
   align-items: center;
 
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--modal-input-bordercolor);
   border-radius: 50%;
+
+  background-color: inherit;
 }
+
+.modal-button:hover{
+  fill: var(--accent-color);
+}
+
 
 /* заголовок формы*/
 .modal-title {
@@ -389,6 +400,8 @@ form.inputs {
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition: outline-color var(--transition-cubic-primary);
 }
 
 .form-text {
@@ -402,7 +415,6 @@ form.inputs {
 .form-input:focus,
 .form-text:focus {
   outline-color: var(--accent-color);
-  color: var(--accent-color);
 }
 
 .input-icon {
@@ -606,8 +618,7 @@ a.client-link {
   border-radius: 4px;
 }
 
-svg.clients-icon {
-}
+
 
 a.client-link:hover,
 a.client-link:focus {
