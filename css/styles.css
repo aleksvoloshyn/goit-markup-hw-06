@@ -496,6 +496,10 @@ form.inputs {
   background-image: url(./../images/modal/icon-checked.svg);
 }
 
+.checkbox:focus+.agreement::before {
+  background-image: url(./../images/modal/icon-checked.svg);
+}
+
 /* advantages */
 .advantages {
   padding-bottom: 0;
