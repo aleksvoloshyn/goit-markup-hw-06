@@ -467,6 +467,7 @@ form.inputs {
 
 .modal-license {
   color: var(--accent-color);
+  text-decoration: underline;
 }
 
 /* обнуление стилей браузера для чекбокса */
